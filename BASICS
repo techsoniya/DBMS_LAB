@@ -1,0 +1,123 @@
+//SOME OTHER CODE FOR DBMS BASICS
+**************************************************************************
+**************************************************************************
+**************************************************************************
+
+
+CREATE TABLE STUDENT(
+USN VARCHAR(20),
+NAME VARCHAR(20),
+DOB VARCHAR(20),
+SEMESTER NUMBER(10),
+PERCENTAGE NUMBER(10));
+
+INSERT INTO STUDENT VALUES('4SF21IS107','SONIYA','05-05-2003',5,94);
+INSERT INTO STUDENT VALUES('4SF21IS024','BHOOMIKA','21-04-2003',5,93);
+INSERT INTO STUDENT VALUES('4SF21IS092','ROSHITH','07-03-2003',5,92);
+INSERT INTO STUDENT VALUES('4SF21IS011','SHARAT','17-05-2004',3,91);
+INSERT INTO STUDENT VALUES('4SF21IS111','ANKUSH','08-05-2000',8,90);
+
+
+**************************************************************************
+
+//OUTPUT
+
+USN                  NAME                 DOB                    SEMESTER PERCENTAGE
+-------------------- -------------------- -------------------- ---------- ----------
+4SF21IS107           SONIYA               05-05-2003                    5         94
+4SF21IS024           BHOOMIKA             21-04-2003                    5         93
+4SF21IS092           ROSHITH              07-03-2003                    5         92
+4SF21IS011           SHARAT               17-05-2004                    3         91
+4SF21IS111           ANKUSH               08-05-2000                    8         90
+
+
+
+1)DISPLAY THE TOTAL NUMBER OF STUDENTS IN CLASS
+
+SQL> SELECT COUNT(*) FROM STUDENT;
+
+  COUNT(*)
+----------
+         5
+
+2)FIND THE AGREEGATE PERCENTAGE OF THE CLASS
+
+SQL> SELECT AVG(PERCENTAGE) FROM STUDENT;
+
+AVG(PERCENTAGE)
+---------------
+             92
+
+
+3)DISPLAY THE NAME OF STUDENT WITH HIGHEST AND LOWEST PERCENTAGE
+
+SQL> SELECT MAX(PERCENTAGE), MIN(PERCENTAGE) FROM STUDENT;
+
+MAX(PERCENTAGE) MIN(PERCENTAGE)
+--------------- ---------------
+             94              90
+
+4)DISPLAY THE NAME AND PERCENTAGE OF ALL THE STUDENTS
+
+SQL> SELECT  NAME, PERCENTAGE FROM STUDENT;
+
+NAME                 PERCENTAGE
+-------------------- ----------
+SONIYA                       94
+BHOOMIKA                     93
+ROSHITH                      92
+SHARAT                       91
+ANKUSH                       90
+
+5)DISPLAY THE INFORMATION OF STUDENT WITH USN 
+
+SQL> SELECT * FROM STUDENT WHERE USN='4SF21IS107';
+
+USN                  NAME                 DOB                    SEMESTER PERCENTAGE
+-------------------- -------------------- -------------------- ---------- ----------
+4SF21IS107           SONIYA               05-05-2003                    5         94
+6)CHANGE THE NAME OF THE STUDENT BEARING SOME USN
+
+SQL> SELECT * FROM STUDENT WHERE USN='4SF21IS107';
+
+USN                  NAME                 DOB                    SEMESTER PERCENTAGE
+-------------------- -------------------- -------------------- ---------- ----------
+4SF21IS107           SONIYA               05-05-2003                    5         94
+
+SQL> UPDATE STUDENT SET NAME='AVANI' WHERE USN='4SF21IS111';
+
+1 row updated.
+
+SQL> SELECT * FROM STUDENT;
+
+USN                  NAME                 DOB                    SEMESTER PERCENTAGE
+-------------------- -------------------- -------------------- ---------- ----------
+4SF21IS107           SONIYA               05-05-2003                    5         94
+4SF21IS024           BHOOMIKA             21-04-2003                    5         93
+4SF21IS092           ROSHITH              07-03-2003                    5         92
+4SF21IS011           SHARAT               17-05-2004                    3         91
+4SF21IS111           AVANI                08-05-2000                    8         90
+
+
+***************************************************************************
+***************************************************************************
+***************************************************************************
+CREATE TABLE STUDENT(NAME VARCHAR(20),USN VARCHAR(10), BRANCH VARCHAR(20),CGPA INT );
+DESC STUDENT
+ INSERT INTO STUDENT VALUES('SONIYA','4SF21IS107','ISE',9);
+INSERT INTO STUDENT VALUES('BHOOMIKA','4SF21IS024','ISE',9);
+INSERT INTO STUDENT VALUES('AVANI','4SF21IS111','ISE',8);
+INSERT INTO STUDENT VALUES('ANKUSH','4SF21IS011','ISE',9);
+INSERT INTO STUDENT VALUES('SADHANA','4SF21IS092','ISE',10);
+
+
+
+SELECT NAME,USN,BRANCH,CGPA FROM STUDENT;
+ SELECT * FROM STUDENT;
+ INSERT INTO STUDENT('SONIYA','4SF21IS1O7');
+
+
+
+
+ SELECT NAME,USN,BRANCH,CGPA FROM STUDENT
+ WHERE USN='4SF21IS107';
