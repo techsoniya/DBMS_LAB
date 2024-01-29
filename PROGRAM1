@@ -10,7 +10,7 @@ INSERT INTO PUBLISHER VALUES('Oxford','UK',9885121112);
 INSERT INTO PUBLISHER VALUES('Cambridge','UK',9785834615);
 INSERT INTO PUBLISHER VALUES('OReilly','California',9994125455);
 
-
+--------------------------------------------------------------------------------------
 
 
 CREATE TABLE BOOK(
@@ -29,6 +29,7 @@ INSERT INTO BOOK VALUES('B105','Python','OReilly',2014);
 INSERT INTO BOOK VALUES('B106','Hadoop','Pearson',2000);
 
 
+----------------------------------------------------------------------------------------
 
 
 CREATE TABLE BOOK_AUTHORS(
@@ -46,6 +47,7 @@ INSERT INTO BOOK_AUTHORS VALUES('B102','Elaine');
 INSERT INTO BOOK_AUTHORS VALUES('B105','Srinivasan');
 
 
+-------------------------------------------------------------------------------------
 
 
 CREATE TABLE LIBRARY_PROGRAMME(
@@ -59,4 +61,7 @@ INSERT INTO LIBRARY_PROGRAMME VALUES('L2','SAPNA','Mangalore');
 INSERT INTO LIBRARY_PROGRAMME VALUES('L3','SANKALP','Bangalore');
 INSERT INTO LIBRARY_PROGRAMME VALUES('L4','PENGUIN','Chennai');
 INSERT INTO LIBRARY_PROGRAMME VALUES('L5','AGNES','Chennai');
+
+
+-----------------------------------------------------------------------------------
 
