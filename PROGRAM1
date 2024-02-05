@@ -219,3 +219,37 @@ B101                 L1                   S103                 04-APR-22 30-JUN-
 
 
 
+
+QUERY 1
+
+
+SELECT B.BOOK_ID,TITLE,PUBLISHER_NAME,AUTHOR_NAME,NO_OF_COPIES 
+FROM BOOK B, BOOK_AUTHORS A ,BOOK_COPIES BC
+WHERE B.BOOK_ID=BC.BOOK_ID AND
+B.BOOK_ID=A.BOOK_ID;
+
+
+
+***********************************************************************************************************************
+//OUPUT
+
+
+BOOK_ID              TITLE                                    PUBLISHER_NAME       AUTHOR_NAME          NO_OF_COPIES
+-------------------- ---------------------------------------- -------------------- -----------------
+B101                 DBMS                                     Pearson              Elmarsi                        99
+B101                 DBMS                                     Pearson              Navathe                        99
+B101                 DBMS                                     Pearson              Ramakrishnan                   99
+B102                 AIML                                     TataMcGraw           Elaine                         99
+
+
+
+
+*******************************************************************************************************************************
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
