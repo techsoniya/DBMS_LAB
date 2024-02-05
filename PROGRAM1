@@ -307,3 +307,53 @@ new   1: DELETE FROM BOOK WHERE BOOK_ID='B103'
 
 ---------------------------------------------------------------------
 
+
+QUERY 4
+
+CREATE TABLE BOOK1 (
+BOOK_ID VARCHAR2(20) PRIMARY KEY,
+TITLE VARCHAR2(40),
+PUBLISHER_NAME VARCHAR2(20) REFERENCES
+PUBLISHER(NAME) ON DELETE CASCADE,
+PUB_YEAR INT)
+PARTITION BY RANGE(PUB_YEAR)
+(PARTITION P1 VALUES LESS THAN(2001),
+PARTITION P2 VALUES LESS THAN(2005),
+PARTITION P3 VALUES LESS THAN(2010),
+PARTITION P4 VALUES LESS THAN(MAXVALUE));
+
+
+
+
+
+INSERT INTO BOOK1 VALUES('B101','DBMS','Pearson',2017);
+INSERT INTO BOOK1 VALUES('B102','AIML','TataMcGraw',2009);
+INSERT INTO BOOK1 VALUES('B103','DCN','Pearson',2017);
+INSERT INTO BOOK1 VALUES('B104','ATC','Oxford',2017);
+INSERT INTO BOOK1 VALUES('B105','Python','OReilly',2014);
+INSERT INTO BOOK1 VALUES('B106','Hadoop','Pearson',2000);
+
+
+
+
+SQL> SELECT * FROM BOOK1 PARTITION (P1);
+
+
+
+***************************************************************************
+
+
+//OUTPUT
+
+BOOK_ID              TITLE                                    PUBLISHER_NAME         PUB_YEAR
+-------------------- ---------------------------------------- -------------------- ----------
+B106                 Hadoop                                   Pearson                  2000
+
+
+
+*************************************************************************
+
+
+
+-------------------------------------------------------------------------
+
