@@ -191,6 +191,30 @@ FOREIGN KEY(PROGRAMME_ID) REFERENCES LIBRARY_PROGRAMME(PROGRAMME_ID) ON DELETE C
 CONSTRAINT CK1 CHECK (DUE_DATE>DUE_DATE));
 
 
+INSERT INTO BOOK_LENDING VALUES('B101','L1','FA101','02-JAN-21','09-JAN-21');
+INSERT INTO BOOK_LENDING VALUES('B101','L1','FA102','02-MAR-23','09-MAR-23');
+INSERT INTO BOOK_LENDING VALUES('B102','L1','FA102','02-MAR-23','09-MAR-23');
+INSERT INTO BOOK_LENDING VALUES('B101','L2','FA102','02-MAR-23','09-MAR-23');
+INSERT INTO BOOK_LENDING VALUES('B101','L1','S103','04-APR-22','30-JUN-22');
+
+
+
+******************************************************************************
+//OUTPUT
+SQL> SET LINESIZE 200 PAGESIZE 3000;
+SQL> SELECT * FROM BOOK_LENDING;
+
+BOOK_ID              PROGRAMME_ID         CARD_NO              DATE_OUT  DUE_DATE
+-------------------- -------------------- -------------------- --------- ---------
+B101                 L1                   FA101                02-JAN-21 09-JAN-21
+B101                 L1                   FA102                02-MAR-23 09-MAR-23
+B102                 L1                   FA102                02-MAR-23 09-MAR-23
+B101                 L2                   FA102                02-MAR-23 09-MAR-23
+B101                 L1                   S103                 04-APR-22 30-JUN-22
+******************************************************************************
+
+
+
 --------------------------------------------------------------------------------
 
 
