@@ -123,3 +123,44 @@ SQL> SELECT * FROM EMPLOYEE;
 
 
 ---------------------------------------------------------------------------
+
+
+
+
+
+
+
+CREATE TABLE DLOCATION(
+DNO REFERENCES DEPARTMENT(DNUM),
+LOCATION VARCHAR2(10),
+PRIMARY KEY(DNO,LOCATION));
+
+
+INSERT INTO DLOCATION VALUES(1,'MANGALURU');
+INSERT INTO DLOCATION VALUES(1,'MYSORE');
+INSERT INTO DLOCATION VALUES(2,'MANGALURU');
+INSERT INTO DLOCATION VALUES(3,'BENGALURU');
+INSERT INTO DLOCATION VALUES(4,'MANGALURU');
+INSERT INTO DLOCATION VALUES(5,'MANGALURU');
+
+
+
+*****************************************************************
+OUTPUT
+
+SQL> SELECT * FROM DLOCATION;
+
+       DNO LOCATION
+---------- ----------
+         1 MANGALURU
+         1 MYSORE
+         2 MANGALURU
+         3 BENGALURU
+         4 MANGALURU
+         5 MANGALURU
+***************************************************************
+
+
+------------------------------------------------------------------
+
+
