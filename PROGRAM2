@@ -249,5 +249,23 @@ RELATIONSHIP VARCHAR2(12),
 FOREIGN KEY(EMP_ID) REFERENCES EMPLOYEE(EID) ON DELETE CASCADE);
 
 
+INSERT INTO DEPENDENT VALUES(1,'SHREYA','F','22-JAN-75','WIFE');
+INSERT INTO DEPENDENT VALUES(2,'AKASH','M','15-JUN-77','BROTHER');
+INSERT INTO DEPENDENT VALUES(3,'PRIYA','F','10-SEP-80','SISTER');
+INSERT INTO DEPENDENT VALUES(4,'NIKHIL','M','02-FEB-79','FATHER');
+INSERT INTO DEPENDENT VALUES(5,'AKSHA','F','30-OCT-75','MOTHER');
 
-INSERT INTO DEPENDENT VALUES(
+************************************************************************
+
+SQL> SELECT * FROM DEPENDENT;
+
+    EMP_ID DEPENDENT_NA GENDE BDATE     RELATIONSHIP
+---------- ------------ ----- --------- ------------
+         1 SHREYA       F     22-JAN-75 WIFE
+         2 AKASH        M     15-JUN-77 BROTHER
+         3 PRIYA        F     10-SEP-80 SISTER
+         4 NIKHIL       M     02-FEB-79 FATHER
+         5 AKSHA        F     30-OCT-75 MOTHER
+
+************************************************************************
+
