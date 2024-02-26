@@ -268,6 +268,7 @@ SQL> SELECT * FROM DEPENDENT;
          5 AKSHA        F     30-OCT-75 MOTHER
 
 ************************************************************************
+
 ---------------------------------------------------------------------------------------
 QUERIES
 
@@ -304,6 +305,11 @@ SELECT Pnum FROM PROJECT WHERE Pname='IOT'
 OUTPUT
 
 
+       EID NAME                     SALARY UPDATED_SALARY
+---------- -------------------- ---------- --------------
+         1 RAHUL                     35000          38500
+         2 SAHANA                    35000          38500
+
 
 
 
@@ -318,6 +324,10 @@ WHERE D.Dnum=E.Dno AND Dname='ACCOUNT';
 OUTPUT
 
 
+SUM(SALARY) AVG(SALARY) MAX(SALARY) MIN(SALARY)
+----------- ----------- ----------- -----------
+     670000  223333.333      600000       35000
+
 
 
 
@@ -329,11 +339,11 @@ SELECT Eid, name FROM EMPLOYEE E WHERE NOT EXISTS(
 ***************************************************
 OUTPUT
 
+       EID NAME
+---------- --------------------
+         5 SAJAAN
 
 
 
 
 ***************************************************
-
-
-
