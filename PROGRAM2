@@ -347,3 +347,35 @@ OUTPUT
 
 
 ***************************************************
+
+5)
+CREATE VIEW DEPTINFO(NAME,COUNT_EMP,SUM_SAL)AS
+SELECT D.DNAME,COUNT(*),SUM(SALARY)
+FROM DEPARTMENT D INNER JOIN EMPLOYEE E
+ON E.DNO=D.DNUM
+GROUP BY D.DNAME;
+
+
+
+
+*****************************************************
+
+
+OUTPUT
+
+
+
+
+View created.
+
+SQL> SELECT * FROM DEPTINFO;
+
+NAME        COUNT_EMP    SUM_SAL
+---------- ---------- ----------
+ACCOUNT             3     670000
+ISE                 1      35000
+CSE                 1      35000
+
+*****************************************************
+
+
