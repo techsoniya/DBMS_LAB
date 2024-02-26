@@ -268,4 +268,38 @@ SQL> SELECT * FROM DEPENDENT;
          5 AKSHA        F     30-OCT-75 MOTHER
 
 ************************************************************************
+---------------------------------------------------------------------------------------
+QUERIES
 
+
+1)
+SELECT pno FROM WORKSON WHERE EID IN 
+(SELECT Eid FROM EMPLOYEE WHERE NAME='RAHUL') UNION (
+SELECT Pnum FROM PROJECT WHERE dno IN (
+SELECT Dnum FROM DEPARTMENT WHERE DMGR_ID IN (
+SELECT Eid FROM EMPLOYEE WHERE NAME='RAHUL'
+))); 
+
+
+2)
+SELECT Eid, name, salary, salary+0.1*salary as updated_salary FROM EMPLOYEE
+WHERE Eid IN (SELECT Eid FROM WORKSON WHERE Pno IN(
+SELECT Pnum FROM PROJECT WHERE Pname='IOT'
+)); 
+
+
+3)
+SELECT SUM(SALARY), AVG(SALARY), MAX(SALARY), MIN(SALARY) FROM EMPLOYEE E, DEPARTMENT D
+WHERE D.Dnum=E.Dno AND Dname='ACCOUNT';
+
+
+4)
+SELECT Eid, name FROM EMPLOYEE E WHERE NOT EXISTS(
+(SELECT Pnum FROM PROJECT WHERE Dno=5) MINUS (SELECT Pno FROM WORKSON W WHERE W.Eid=E.Eid));
+
+
+
+
+4)
+SELECT Eid, name FROM EMPLOYEE E WHERE NOT EXISTS(
+(SELECT Pnum FROM PROJECT WHERE Dno=5) MINUS (SELECT Pno FROM WORKSON W WHERE W.Eid=E.Eid));
