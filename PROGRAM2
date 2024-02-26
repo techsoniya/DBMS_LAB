@@ -281,25 +281,59 @@ SELECT Eid FROM EMPLOYEE WHERE NAME='RAHUL'
 ))); 
 
 
+***************************************************
+OUTPUT
+
+      PNO
+---------
+        1
+        2
+        4
+        5
+
+***************************************************
+
+
 2)
 SELECT Eid, name, salary, salary+0.1*salary as updated_salary FROM EMPLOYEE
 WHERE Eid IN (SELECT Eid FROM WORKSON WHERE Pno IN(
 SELECT Pnum FROM PROJECT WHERE Pname='IOT'
 )); 
 
+***************************************************
+OUTPUT
+
+
+
+
+
+***************************************************
 
 3)
 SELECT SUM(SALARY), AVG(SALARY), MAX(SALARY), MIN(SALARY) FROM EMPLOYEE E, DEPARTMENT D
 WHERE D.Dnum=E.Dno AND Dname='ACCOUNT';
 
 
+***************************************************
+OUTPUT
+
+
+
+
+
+***************************************************
 4)
 SELECT Eid, name FROM EMPLOYEE E WHERE NOT EXISTS(
 (SELECT Pnum FROM PROJECT WHERE Dno=5) MINUS (SELECT Pno FROM WORKSON W WHERE W.Eid=E.Eid));
 
+***************************************************
+OUTPUT
 
 
 
-4)
-SELECT Eid, name FROM EMPLOYEE E WHERE NOT EXISTS(
-(SELECT Pnum FROM PROJECT WHERE Dno=5) MINUS (SELECT Pno FROM WORKSON W WHERE W.Eid=E.Eid));
+
+
+***************************************************
+
+
+
